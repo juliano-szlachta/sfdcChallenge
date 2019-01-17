@@ -1,0 +1,46 @@
+<apex:page standardController="Match__c" recordSetVar="matches">
+    <apex:form>
+        <apex:pageBlock title="Match List">
+            <apex:pageBlockTable value="{!matches}" var="a">
+                <apex:column >
+                    <apex:facet name="header">
+                        Match Number
+                    </apex:facet>
+                    <apex:outputField value="{!a.Name}"/>
+                </apex:column>
+                <apex:column>
+                    <apex:facet name="header">
+                        Starting at:
+                    </apex:facet>
+                    <apex:outputField value="{!a.Starting_at__c}"/>
+                </apex:column>
+                <apex:column>
+                    <apex:facet name="header">
+                        Home team
+                    </apex:facet>
+                    <apex:outputField value="{!a.Home_team__c}"/>
+                </apex:column>
+                <apex:column>
+                    <apex:facet name="header">
+                        Home team Score
+                    </apex:facet>
+                    <apex:outputField value="{!a.Home_team_score__c}"/>
+                </apex:column>
+                <apex:column>                        
+                    <apex:facet name="header">
+                        Away team
+                    </apex:facet>
+                    <apex:outputField value="{!a.Away_team__c}"/>
+                </apex:column>
+                <apex:column>
+                    <apex:facet name="header">
+                        Away team Score
+                    </apex:facet>                    
+                    <apex:outputField value="{!a.Away_team_score__c}"/>
+                </apex:column>                
+            </apex:pageBlockTable>  
+            <apex:commandLink action="{!previous}">Previous</apex:commandLink>&nbsp;  	
+            <apex:commandLink action="{!next}">Next</apex:commandLink>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
